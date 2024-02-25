@@ -1,4 +1,4 @@
-package Trendithon.SpinOff.domain.member.entity;
+package Trendithon.SpinOff.domain.profile.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,21 +6,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
 @Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Profile {
+public class ProfileTechnic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String introduce;
-    private String job;
-    private String specificDuty;
-    @OneToMany
-    private Set<Technic> technics;
-    private String link;
+    @ManyToOne
+    @JoinColumn(name = "technic_name")
+    private Technic technic;
+    @ManyToOne
+    @JoinColumn(name = "profile_id")
+    private Profile profile;
 }
