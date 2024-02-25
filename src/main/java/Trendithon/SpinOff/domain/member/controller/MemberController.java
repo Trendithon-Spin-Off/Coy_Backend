@@ -45,7 +45,6 @@ public class MemberController {
         return tokenService.makeToken(loginDto);
     } // 회원 로그인
 
-
     @PostMapping("/memberId/check")
     public ResponseEntity<Boolean> checkDuplicate(@RequestBody HashMap<String, String> member) {
         String memberId = member.get("memberId");
