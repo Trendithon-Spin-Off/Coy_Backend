@@ -16,13 +16,13 @@ public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long bno;// id
-    //@Column(length = 50,nullable = false)
+    @Column(length = 50,nullable = false)
     private String projectName;// 제목
-    //@Column(length =20,nullable= false)
+    @Column(length =20,nullable= false)
     private String projectDescription;// 한줄 소개
-    //@Column(length= 1000,nullable = false)
+    @Column(length= 1000,nullable = false)
     private String projectBackground;//배경
-    //@Column(length=100,nullable = false)
+    @Column(length=100,nullable = false)
     private String projectFeatures;//주요기능
     private String projectImage;// 이미지 URL
     private String distribution;//배포 URL
